@@ -53,15 +53,15 @@
             this.groupBoxDrawer = new System.Windows.Forms.GroupBox();
             this.numericDrawers = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.sumSurfaceArea = new System.Windows.Forms.Label();
+            this.costSurfaceArea = new System.Windows.Forms.Label();
             this.labelSumSurfaceArea = new System.Windows.Forms.Label();
-            this.sumMaterial = new System.Windows.Forms.Label();
+            this.costMaterial = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.sumDrawers = new System.Windows.Forms.Label();
+            this.costDrawers = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.sumTotalCost = new System.Windows.Forms.Label();
+            this.costTotal = new System.Windows.Forms.Label();
             this.labelTotalCost = new System.Windows.Forms.Label();
-            this.sumShipping = new System.Windows.Forms.Label();
+            this.costShipping = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -353,15 +353,15 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Between 0 - 7";
             // 
-            // sumSurfaceArea
+            // costSurfaceArea
             // 
-            this.sumSurfaceArea.AutoSize = true;
-            this.sumSurfaceArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sumSurfaceArea.Location = new System.Drawing.Point(123, 34);
-            this.sumSurfaceArea.Name = "sumSurfaceArea";
-            this.sumSurfaceArea.Size = new System.Drawing.Size(18, 20);
-            this.sumSurfaceArea.TabIndex = 10;
-            this.sumSurfaceArea.Text = "?";
+            this.costSurfaceArea.AutoSize = true;
+            this.costSurfaceArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costSurfaceArea.Location = new System.Drawing.Point(123, 34);
+            this.costSurfaceArea.Name = "costSurfaceArea";
+            this.costSurfaceArea.Size = new System.Drawing.Size(18, 20);
+            this.costSurfaceArea.TabIndex = 10;
+            this.costSurfaceArea.Text = "?";
             // 
             // labelSumSurfaceArea
             // 
@@ -373,15 +373,15 @@
             this.labelSumSurfaceArea.TabIndex = 9;
             this.labelSumSurfaceArea.Text = "Surface Area :";
             // 
-            // sumMaterial
+            // costMaterial
             // 
-            this.sumMaterial.AutoSize = true;
-            this.sumMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sumMaterial.Location = new System.Drawing.Point(123, 74);
-            this.sumMaterial.Name = "sumMaterial";
-            this.sumMaterial.Size = new System.Drawing.Size(18, 20);
-            this.sumMaterial.TabIndex = 12;
-            this.sumMaterial.Text = "?";
+            this.costMaterial.AutoSize = true;
+            this.costMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costMaterial.Location = new System.Drawing.Point(123, 74);
+            this.costMaterial.Name = "costMaterial";
+            this.costMaterial.Size = new System.Drawing.Size(18, 20);
+            this.costMaterial.TabIndex = 12;
+            this.costMaterial.Text = "?";
             // 
             // label3
             // 
@@ -393,15 +393,15 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Drawers :";
             // 
-            // sumDrawers
+            // costDrawers
             // 
-            this.sumDrawers.AutoSize = true;
-            this.sumDrawers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sumDrawers.Location = new System.Drawing.Point(123, 114);
-            this.sumDrawers.Name = "sumDrawers";
-            this.sumDrawers.Size = new System.Drawing.Size(18, 20);
-            this.sumDrawers.TabIndex = 14;
-            this.sumDrawers.Text = "?";
+            this.costDrawers.AutoSize = true;
+            this.costDrawers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costDrawers.Location = new System.Drawing.Point(123, 114);
+            this.costDrawers.Name = "costDrawers";
+            this.costDrawers.Size = new System.Drawing.Size(18, 20);
+            this.costDrawers.TabIndex = 14;
+            this.costDrawers.Text = "?";
             // 
             // label5
             // 
@@ -413,15 +413,15 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Materials :";
             // 
-            // sumTotalCost
+            // costTotal
             // 
-            this.sumTotalCost.AutoSize = true;
-            this.sumTotalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sumTotalCost.Location = new System.Drawing.Point(123, 195);
-            this.sumTotalCost.Name = "sumTotalCost";
-            this.sumTotalCost.Size = new System.Drawing.Size(18, 20);
-            this.sumTotalCost.TabIndex = 16;
-            this.sumTotalCost.Text = "?";
+            this.costTotal.AutoSize = true;
+            this.costTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costTotal.Location = new System.Drawing.Point(123, 195);
+            this.costTotal.Name = "costTotal";
+            this.costTotal.Size = new System.Drawing.Size(18, 20);
+            this.costTotal.TabIndex = 16;
+            this.costTotal.Text = "?";
             // 
             // labelTotalCost
             // 
@@ -433,15 +433,15 @@
             this.labelTotalCost.TabIndex = 15;
             this.labelTotalCost.Text = "Total Cost :";
             // 
-            // sumShipping
+            // costShipping
             // 
-            this.sumShipping.AutoSize = true;
-            this.sumShipping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sumShipping.Location = new System.Drawing.Point(123, 154);
-            this.sumShipping.Name = "sumShipping";
-            this.sumShipping.Size = new System.Drawing.Size(18, 20);
-            this.sumShipping.TabIndex = 18;
-            this.sumShipping.Text = "?";
+            this.costShipping.AutoSize = true;
+            this.costShipping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costShipping.Location = new System.Drawing.Point(123, 154);
+            this.costShipping.Name = "costShipping";
+            this.costShipping.Size = new System.Drawing.Size(18, 20);
+            this.costShipping.TabIndex = 18;
+            this.costShipping.Text = "?";
             // 
             // label9
             // 
@@ -478,15 +478,15 @@
             // groupQuoteSummary
             // 
             this.groupQuoteSummary.Controls.Add(this.labelSumSurfaceArea);
-            this.groupQuoteSummary.Controls.Add(this.sumSurfaceArea);
-            this.groupQuoteSummary.Controls.Add(this.sumShipping);
+            this.groupQuoteSummary.Controls.Add(this.costSurfaceArea);
+            this.groupQuoteSummary.Controls.Add(this.costShipping);
             this.groupQuoteSummary.Controls.Add(this.label3);
             this.groupQuoteSummary.Controls.Add(this.label9);
-            this.groupQuoteSummary.Controls.Add(this.sumMaterial);
-            this.groupQuoteSummary.Controls.Add(this.sumTotalCost);
+            this.groupQuoteSummary.Controls.Add(this.costMaterial);
+            this.groupQuoteSummary.Controls.Add(this.costTotal);
             this.groupQuoteSummary.Controls.Add(this.label5);
             this.groupQuoteSummary.Controls.Add(this.labelTotalCost);
-            this.groupQuoteSummary.Controls.Add(this.sumDrawers);
+            this.groupQuoteSummary.Controls.Add(this.costDrawers);
             this.groupQuoteSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupQuoteSummary.Location = new System.Drawing.Point(355, 271);
             this.groupQuoteSummary.Name = "groupQuoteSummary";
@@ -557,15 +557,15 @@
         protected System.Windows.Forms.GroupBox groupBoxDrawer;
         private System.Windows.Forms.NumericUpDown numericDrawers;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label sumSurfaceArea;
+        private System.Windows.Forms.Label costSurfaceArea;
         private System.Windows.Forms.Label labelSumSurfaceArea;
-        private System.Windows.Forms.Label sumMaterial;
+        private System.Windows.Forms.Label costMaterial;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label sumDrawers;
+        private System.Windows.Forms.Label costDrawers;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label sumTotalCost;
+        private System.Windows.Forms.Label costTotal;
         private System.Windows.Forms.Label labelTotalCost;
-        private System.Windows.Forms.Label sumShipping;
+        private System.Windows.Forms.Label costShipping;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSubmit;

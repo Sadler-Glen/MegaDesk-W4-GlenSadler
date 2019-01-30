@@ -9,10 +9,10 @@ namespace MegaDesk_3_GlenSadler
     class DeskQuote
     {
         #region Object member variables
-        private string CustomerName;
+        /*private string CustomerName;
         private DateTime QuoteDate;
         private Desk Desk = new Desk();
-        private int RushDays;
+        private int RushDays;*/
         private int QuoteAmount;
         #endregion
 
@@ -25,7 +25,12 @@ namespace MegaDesk_3_GlenSadler
         private const int PRICE_PER_DRAWER = 50;
         private const int PRICE_PER_SURFACE_AREA = 1;
 
-        public DeskQuote(string customerName, DateTime quoteDate, int width, int depth, int drawers, string material, int rushDays)
+        public DateTime QuoteDate { get; set; }
+        public string CustomerName { get; set; }
+        public int RushDays { get; set; }
+        public Desk newDesk = new Desk();
+
+        /*public DeskQuote(string customerName, DateTime quoteDate, int width, int depth, int drawers, string material, int rushDays)
         {
             CustomerName = customerName;
             QuoteDate = quoteDate;
@@ -35,7 +40,7 @@ namespace MegaDesk_3_GlenSadler
             Desk.NumberOfDrawers = drawers;
             Desk.DeskTopMaterial = material;
             Desk.SurfaceArea = Desk.Width * Desk.Depth;
-        }
+        }*/
 
         public int CalculateQuoteTotal()
         {
@@ -43,30 +48,30 @@ namespace MegaDesk_3_GlenSadler
             return QuoteAmount;
         }
 
-        private int SurfaceAreaCost()
+        public int SurfaceAreaCost()
         {
-            if (Desk.SurfaceArea > SIZE_THRESHOLD)
+            if (newDesk.SurfaceArea > SIZE_THRESHOLD)
             {
-                return (Desk.SurfaceArea - SIZE_THRESHOLD) * PRICE_PER_SURFACE_AREA;
+                return (newDesk.SurfaceArea - SIZE_THRESHOLD) * PRICE_PER_SURFACE_AREA;
             }
-            return (Desk.SurfaceArea - SIZE_THRESHOLD);
+            return (SIZE_THRESHOLD - newDesk.SurfaceArea); 
         }
 
-        private int DrawerCost()
+        public int DrawerCost()
         {
-            return Desk.NumberOfDrawers * PRICE_PER_DRAWER;
+            return newDesk.NumberOfDrawers * PRICE_PER_DRAWER;
         }
 
         // Temporary return of 100
         // Code yet to be written
-        private int DeskTopMaterialCost()
+        public int DeskTopMaterialCost()
         {
             return 100;
         }
 
         // Temporary return of 100
         // Code yet to be written
-        private int RushDaysCost()
+        public int RushDaysCost()
         {
             RushDays = 100;
 

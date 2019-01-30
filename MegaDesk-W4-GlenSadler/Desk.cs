@@ -11,7 +11,7 @@ namespace MegaDesk_3_GlenSadler
         public int Width { get; set; }
         public int Depth { get; set; }
         public int NumberOfDrawers { get; set; }
-        public int SurfaceArea { get; set; }
+        public int SurfaceArea { get { return Width * Depth; } }
         public string DeskTopMaterial { get; set; }
         
 

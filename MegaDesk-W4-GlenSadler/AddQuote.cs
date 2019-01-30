@@ -12,6 +12,8 @@ namespace MegaDesk_3_GlenSadler
 {
     public partial class AddQuote : Form
     {
+        DeskQuote quote = new DeskQuote();
+
         public AddQuote()
         {
             InitializeComponent();
@@ -43,10 +45,18 @@ namespace MegaDesk_3_GlenSadler
             Application.Exit();
         }*/
 
+        private void customerName_TextChanged(object sender, EventArgs e)
+        {
+            //quote.CustomerName = customerName.Text;
+        }
+
         private void numericWidthEvent(object sender, EventArgs e)
         {
             //numericWidth.Minimum = 24;
             //numericWidth.Maximum = 96;
+
+            /*quote.newDesk.Width = (int)numericWidth.Value;
+            surfaceAreaCalc.Text = ($"{quote.newDesk.SurfaceArea.ToString()} sq\"");*/
             if (int.TryParse(numericWidth.Text, out int WidthInput) == true)
             {
                 if (WidthInput < Desk.MINWIDTH || WidthInput > Desk.MAXWIDTH)
@@ -60,11 +70,15 @@ namespace MegaDesk_3_GlenSadler
                 else
                 {
                     numericWidth.BackColor = System.Drawing.SystemColors.Window;
+                    quote.newDesk.Width = (int)numericWidth.Value;
+                    surfaceAreaCalc.Text = ($"{quote.newDesk.SurfaceArea.ToString()} sq\"");
+                    costSurfaceArea.Text = ($"${quote.SurfaceAreaCost().ToString()}");
+                    costTotal.Text = ($"${quote.CalculateQuoteTotal().ToString()}");
                 }
             }
             else if (int.TryParse(numericWidth.Text, out WidthInput) == false && numericWidth.Text.Length != 0)
             {
-                MessageBox.Show($"The width must a whole number between {Desk.MINWIDTH} and {Desk.MAXWIDTH} inches inclusive.");
+                MessageBox.Show($"The width must be a whole number between {Desk.MINWIDTH} and {Desk.MAXWIDTH} inches inclusive.");
                 numericWidth.Text = String.Empty;
                 numericWidth.BackColor = Color.Red;
                 numericWidth.Focus();
@@ -72,6 +86,10 @@ namespace MegaDesk_3_GlenSadler
             else
             {
                 numericWidth.BackColor = System.Drawing.SystemColors.Window;
+                quote.newDesk.Width = (int)numericWidth.Value;
+                surfaceAreaCalc.Text = ($"{quote.newDesk.SurfaceArea.ToString()} sq\"");
+                costSurfaceArea.Text = ($"${quote.SurfaceAreaCost().ToString()}");
+                costTotal.Text = ($"${quote.CalculateQuoteTotal().ToString()}");
             }
 
         }
@@ -95,12 +113,14 @@ namespace MegaDesk_3_GlenSadler
 
         private void numericDepthEvent(object sender, EventArgs e)
         {
-            //numericWidth.Minimum = 12;
-            //numericWidth.Maximum = 48;
+            //numericDepth.Minimum = 12;
+            //numericDepth.Maximum = 48;
+            //quote.newDesk.Depth = (int)numericDepth.Value;
+            //surfaceAreaCalc.Text = ($"{quote.newDesk.SurfaceArea.ToString()} sq\"");
             if (int.TryParse(numericDepth.Text, out int DepthInput) == true) {
                 if (DepthInput < Desk.MINDEPTH || DepthInput > Desk.MAXDEPTH)
                 {
-                    MessageBox.Show($"The depth must a whole number between {Desk.MINDEPTH} and {Desk.MAXDEPTH} inches inclusive");
+                    MessageBox.Show($"The depth must be a whole number between {Desk.MINDEPTH} and {Desk.MAXDEPTH} inches inclusive");
                     numericDepth.Text = String.Empty;
                     numericDepth.BackColor = Color.Red;
                     numericDepth.Focus();
@@ -108,11 +128,15 @@ namespace MegaDesk_3_GlenSadler
                 else
                 {
                     numericDepth.BackColor = System.Drawing.SystemColors.Window;
+                    quote.newDesk.Depth = (int)numericDepth.Value;
+                    surfaceAreaCalc.Text = ($"{quote.newDesk.SurfaceArea.ToString()} sq\"");
+                    costSurfaceArea.Text = ($"${quote.SurfaceAreaCost().ToString()}");
+                    costTotal.Text = ($"${quote.CalculateQuoteTotal().ToString()}");
                 }
             }
             else if (int.TryParse(numericDepth.Text, out DepthInput) == false && numericDepth.Text.Length != 0)
             {
-                MessageBox.Show($"The depth must a whole number between {Desk.MINDEPTH} and {Desk.MAXDEPTH} inches inclusive.");
+                MessageBox.Show($"The depth must be a whole number between {Desk.MINDEPTH} and {Desk.MAXDEPTH} inches inclusive.");
                 numericDepth.Text = String.Empty;
                 numericDepth.BackColor = Color.Red;
                 numericDepth.Focus();
@@ -120,6 +144,10 @@ namespace MegaDesk_3_GlenSadler
             else
             {
                 numericDepth.BackColor = System.Drawing.SystemColors.Window;
+                quote.newDesk.Width = (int)numericWidth.Value;
+                surfaceAreaCalc.Text = ($"{quote.newDesk.SurfaceArea.ToString()} \"");
+                costSurfaceArea.Text = ($"${quote.SurfaceAreaCost().ToString()}");
+                costTotal.Text = ($"${quote.CalculateQuoteTotal().ToString()}");
             }
         }
 
