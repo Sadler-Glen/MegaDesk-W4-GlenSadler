@@ -44,11 +44,7 @@
             this.radioBtnShipping7days = new System.Windows.Forms.RadioButton();
             this.radioBtnShippingStandard = new System.Windows.Forms.RadioButton();
             this.groupSurfaceMaterial = new System.Windows.Forms.GroupBox();
-            this.radioBtnMaterialVeneer = new System.Windows.Forms.RadioButton();
-            this.radioBtnMaterialRosewood = new System.Windows.Forms.RadioButton();
-            this.radioBtnMaterialPine = new System.Windows.Forms.RadioButton();
-            this.radioBtnMaterialLaminate = new System.Windows.Forms.RadioButton();
-            this.radioBtnMaterialOak = new System.Windows.Forms.RadioButton();
+            this.desktopMaterialComboBox = new System.Windows.Forms.ComboBox();
             this.customerName = new System.Windows.Forms.TextBox();
             this.groupBoxDrawer = new System.Windows.Forms.GroupBox();
             this.numericDrawers = new System.Windows.Forms.NumericUpDown();
@@ -66,6 +62,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.groupQuoteSummary = new System.Windows.Forms.GroupBox();
+            this.labelBase = new System.Windows.Forms.Label();
+            this.costBase = new System.Windows.Forms.Label();
             this.groupBoxSurfaceArea.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericDepth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericWidth)).BeginInit();
@@ -189,7 +187,7 @@
             this.groupBoxShipping.Controls.Add(this.radioBtnShipping7days);
             this.groupBoxShipping.Controls.Add(this.radioBtnShippingStandard);
             this.groupBoxShipping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxShipping.Location = new System.Drawing.Point(31, 360);
+            this.groupBoxShipping.Location = new System.Drawing.Point(355, 56);
             this.groupBoxShipping.Name = "groupBoxShipping";
             this.groupBoxShipping.Size = new System.Drawing.Size(268, 148);
             this.groupBoxShipping.TabIndex = 4;
@@ -206,6 +204,7 @@
             this.radioBtnShipping3days.TabStop = true;
             this.radioBtnShipping3days.Text = "3-Days";
             this.radioBtnShipping3days.UseVisualStyleBackColor = true;
+            this.radioBtnShipping3days.CheckedChanged += new System.EventHandler(this.radioBtnShipping3days_CheckedChanged);
             // 
             // radioBtnShipping5days
             // 
@@ -217,6 +216,7 @@
             this.radioBtnShipping5days.TabStop = true;
             this.radioBtnShipping5days.Text = "5-Days";
             this.radioBtnShipping5days.UseVisualStyleBackColor = true;
+            this.radioBtnShipping5days.CheckedChanged += new System.EventHandler(this.radioBtnShipping5days_CheckedChanged);
             // 
             // radioBtnShipping7days
             // 
@@ -228,6 +228,7 @@
             this.radioBtnShipping7days.TabStop = true;
             this.radioBtnShipping7days.Text = "7-Days";
             this.radioBtnShipping7days.UseVisualStyleBackColor = true;
+            this.radioBtnShipping7days.CheckedChanged += new System.EventHandler(this.radioBtnShipping7days_CheckedChanged);
             // 
             // radioBtnShippingStandard
             // 
@@ -239,76 +240,28 @@
             this.radioBtnShippingStandard.TabStop = true;
             this.radioBtnShippingStandard.Text = "Standard (14 Days)";
             this.radioBtnShippingStandard.UseVisualStyleBackColor = true;
+            this.radioBtnShippingStandard.CheckedChanged += new System.EventHandler(this.radioBtnShippingStandard_CheckedChanged);
             // 
             // groupSurfaceMaterial
             // 
-            this.groupSurfaceMaterial.Controls.Add(this.radioBtnMaterialVeneer);
-            this.groupSurfaceMaterial.Controls.Add(this.radioBtnMaterialRosewood);
-            this.groupSurfaceMaterial.Controls.Add(this.radioBtnMaterialPine);
-            this.groupSurfaceMaterial.Controls.Add(this.radioBtnMaterialLaminate);
-            this.groupSurfaceMaterial.Controls.Add(this.radioBtnMaterialOak);
+            this.groupSurfaceMaterial.Controls.Add(this.desktopMaterialComboBox);
             this.groupSurfaceMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupSurfaceMaterial.Location = new System.Drawing.Point(355, 56);
+            this.groupSurfaceMaterial.Location = new System.Drawing.Point(32, 288);
             this.groupSurfaceMaterial.Name = "groupSurfaceMaterial";
-            this.groupSurfaceMaterial.Size = new System.Drawing.Size(232, 193);
+            this.groupSurfaceMaterial.Size = new System.Drawing.Size(268, 96);
             this.groupSurfaceMaterial.TabIndex = 2;
             this.groupSurfaceMaterial.TabStop = false;
             this.groupSurfaceMaterial.Text = "Surface Material";
             // 
-            // radioBtnMaterialVeneer
+            // desktopMaterialComboBox
             // 
-            this.radioBtnMaterialVeneer.AutoSize = true;
-            this.radioBtnMaterialVeneer.Location = new System.Drawing.Point(8, 145);
-            this.radioBtnMaterialVeneer.Name = "radioBtnMaterialVeneer";
-            this.radioBtnMaterialVeneer.Size = new System.Drawing.Size(79, 24);
-            this.radioBtnMaterialVeneer.TabIndex = 4;
-            this.radioBtnMaterialVeneer.TabStop = true;
-            this.radioBtnMaterialVeneer.Text = "Veneer";
-            this.radioBtnMaterialVeneer.UseVisualStyleBackColor = true;
-            // 
-            // radioBtnMaterialRosewood
-            // 
-            this.radioBtnMaterialRosewood.AutoSize = true;
-            this.radioBtnMaterialRosewood.Location = new System.Drawing.Point(8, 115);
-            this.radioBtnMaterialRosewood.Name = "radioBtnMaterialRosewood";
-            this.radioBtnMaterialRosewood.Size = new System.Drawing.Size(103, 24);
-            this.radioBtnMaterialRosewood.TabIndex = 3;
-            this.radioBtnMaterialRosewood.TabStop = true;
-            this.radioBtnMaterialRosewood.Text = "Rosewood";
-            this.radioBtnMaterialRosewood.UseVisualStyleBackColor = true;
-            // 
-            // radioBtnMaterialPine
-            // 
-            this.radioBtnMaterialPine.AutoSize = true;
-            this.radioBtnMaterialPine.Location = new System.Drawing.Point(8, 85);
-            this.radioBtnMaterialPine.Name = "radioBtnMaterialPine";
-            this.radioBtnMaterialPine.Size = new System.Drawing.Size(58, 24);
-            this.radioBtnMaterialPine.TabIndex = 2;
-            this.radioBtnMaterialPine.TabStop = true;
-            this.radioBtnMaterialPine.Text = "Pine";
-            this.radioBtnMaterialPine.UseVisualStyleBackColor = true;
-            // 
-            // radioBtnMaterialLaminate
-            // 
-            this.radioBtnMaterialLaminate.AutoSize = true;
-            this.radioBtnMaterialLaminate.Location = new System.Drawing.Point(8, 55);
-            this.radioBtnMaterialLaminate.Name = "radioBtnMaterialLaminate";
-            this.radioBtnMaterialLaminate.Size = new System.Drawing.Size(93, 24);
-            this.radioBtnMaterialLaminate.TabIndex = 1;
-            this.radioBtnMaterialLaminate.TabStop = true;
-            this.radioBtnMaterialLaminate.Text = "Laminate";
-            this.radioBtnMaterialLaminate.UseVisualStyleBackColor = true;
-            // 
-            // radioBtnMaterialOak
-            // 
-            this.radioBtnMaterialOak.AutoSize = true;
-            this.radioBtnMaterialOak.Location = new System.Drawing.Point(8, 25);
-            this.radioBtnMaterialOak.Name = "radioBtnMaterialOak";
-            this.radioBtnMaterialOak.Size = new System.Drawing.Size(56, 24);
-            this.radioBtnMaterialOak.TabIndex = 0;
-            this.radioBtnMaterialOak.TabStop = true;
-            this.radioBtnMaterialOak.Text = "Oak";
-            this.radioBtnMaterialOak.UseVisualStyleBackColor = true;
+            this.desktopMaterialComboBox.FormattingEnabled = true;
+            this.desktopMaterialComboBox.Location = new System.Drawing.Point(12, 35);
+            this.desktopMaterialComboBox.MaxDropDownItems = 5;
+            this.desktopMaterialComboBox.Name = "desktopMaterialComboBox";
+            this.desktopMaterialComboBox.Size = new System.Drawing.Size(237, 28);
+            this.desktopMaterialComboBox.TabIndex = 5;
+            this.desktopMaterialComboBox.TextChanged += new System.EventHandler(this.comboSurfaceMaterial_TextChanged);
             // 
             // customerName
             // 
@@ -324,7 +277,7 @@
             this.groupBoxDrawer.Controls.Add(this.numericDrawers);
             this.groupBoxDrawer.Controls.Add(this.label1);
             this.groupBoxDrawer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDrawer.Location = new System.Drawing.Point(32, 270);
+            this.groupBoxDrawer.Location = new System.Drawing.Point(29, 426);
             this.groupBoxDrawer.Name = "groupBoxDrawer";
             this.groupBoxDrawer.Size = new System.Drawing.Size(267, 64);
             this.groupBoxDrawer.TabIndex = 3;
@@ -340,9 +293,11 @@
             0,
             0});
             this.numericDrawers.Name = "numericDrawers";
-            this.numericDrawers.Size = new System.Drawing.Size(120, 26);
+            this.numericDrawers.Size = new System.Drawing.Size(123, 26);
             this.numericDrawers.TabIndex = 0;
+            this.numericDrawers.ValueChanged += new System.EventHandler(this.numericDrawersEvent);
             this.numericDrawers.Enter += new System.EventHandler(this.data_Enter);
+            this.numericDrawers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericDrawers_KeyPress);
             // 
             // label1
             // 
@@ -357,7 +312,7 @@
             // 
             this.costSurfaceArea.AutoSize = true;
             this.costSurfaceArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costSurfaceArea.Location = new System.Drawing.Point(123, 34);
+            this.costSurfaceArea.Location = new System.Drawing.Point(123, 69);
             this.costSurfaceArea.Name = "costSurfaceArea";
             this.costSurfaceArea.Size = new System.Drawing.Size(18, 20);
             this.costSurfaceArea.TabIndex = 10;
@@ -367,7 +322,7 @@
             // 
             this.labelSumSurfaceArea.AutoSize = true;
             this.labelSumSurfaceArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSumSurfaceArea.Location = new System.Drawing.Point(6, 34);
+            this.labelSumSurfaceArea.Location = new System.Drawing.Point(6, 69);
             this.labelSumSurfaceArea.Name = "labelSumSurfaceArea";
             this.labelSumSurfaceArea.Size = new System.Drawing.Size(111, 20);
             this.labelSumSurfaceArea.TabIndex = 9;
@@ -377,7 +332,7 @@
             // 
             this.costMaterial.AutoSize = true;
             this.costMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costMaterial.Location = new System.Drawing.Point(123, 74);
+            this.costMaterial.Location = new System.Drawing.Point(123, 109);
             this.costMaterial.Name = "costMaterial";
             this.costMaterial.Size = new System.Drawing.Size(18, 20);
             this.costMaterial.TabIndex = 12;
@@ -387,7 +342,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 114);
+            this.label3.Location = new System.Drawing.Point(41, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 11;
@@ -397,7 +352,7 @@
             // 
             this.costDrawers.AutoSize = true;
             this.costDrawers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costDrawers.Location = new System.Drawing.Point(123, 114);
+            this.costDrawers.Location = new System.Drawing.Point(123, 149);
             this.costDrawers.Name = "costDrawers";
             this.costDrawers.Size = new System.Drawing.Size(18, 20);
             this.costDrawers.TabIndex = 14;
@@ -407,7 +362,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(36, 74);
+            this.label5.Location = new System.Drawing.Point(36, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 20);
             this.label5.TabIndex = 13;
@@ -417,7 +372,7 @@
             // 
             this.costTotal.AutoSize = true;
             this.costTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costTotal.Location = new System.Drawing.Point(123, 195);
+            this.costTotal.Location = new System.Drawing.Point(123, 230);
             this.costTotal.Name = "costTotal";
             this.costTotal.Size = new System.Drawing.Size(18, 20);
             this.costTotal.TabIndex = 16;
@@ -427,7 +382,7 @@
             // 
             this.labelTotalCost.AutoSize = true;
             this.labelTotalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalCost.Location = new System.Drawing.Point(28, 195);
+            this.labelTotalCost.Location = new System.Drawing.Point(28, 230);
             this.labelTotalCost.Name = "labelTotalCost";
             this.labelTotalCost.Size = new System.Drawing.Size(89, 20);
             this.labelTotalCost.TabIndex = 15;
@@ -437,7 +392,7 @@
             // 
             this.costShipping.AutoSize = true;
             this.costShipping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costShipping.Location = new System.Drawing.Point(123, 154);
+            this.costShipping.Location = new System.Drawing.Point(123, 189);
             this.costShipping.Name = "costShipping";
             this.costShipping.Size = new System.Drawing.Size(18, 20);
             this.costShipping.TabIndex = 18;
@@ -447,7 +402,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(38, 154);
+            this.label9.Location = new System.Drawing.Point(38, 189);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 20);
             this.label9.TabIndex = 17;
@@ -477,6 +432,8 @@
             // 
             // groupQuoteSummary
             // 
+            this.groupQuoteSummary.Controls.Add(this.costBase);
+            this.groupQuoteSummary.Controls.Add(this.labelBase);
             this.groupQuoteSummary.Controls.Add(this.labelSumSurfaceArea);
             this.groupQuoteSummary.Controls.Add(this.costSurfaceArea);
             this.groupQuoteSummary.Controls.Add(this.costShipping);
@@ -488,18 +445,37 @@
             this.groupQuoteSummary.Controls.Add(this.labelTotalCost);
             this.groupQuoteSummary.Controls.Add(this.costDrawers);
             this.groupQuoteSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupQuoteSummary.Location = new System.Drawing.Point(355, 271);
+            this.groupQuoteSummary.Location = new System.Drawing.Point(355, 246);
             this.groupQuoteSummary.Name = "groupQuoteSummary";
-            this.groupQuoteSummary.Size = new System.Drawing.Size(232, 237);
+            this.groupQuoteSummary.Size = new System.Drawing.Size(267, 271);
             this.groupQuoteSummary.TabIndex = 19;
             this.groupQuoteSummary.TabStop = false;
             this.groupQuoteSummary.Text = "Quote Summary";
+            // 
+            // labelBase
+            // 
+            this.labelBase.AutoSize = true;
+            this.labelBase.Location = new System.Drawing.Point(26, 34);
+            this.labelBase.Name = "labelBase";
+            this.labelBase.Size = new System.Drawing.Size(91, 20);
+            this.labelBase.TabIndex = 19;
+            this.labelBase.Text = "Base Cost :";
+            // 
+            // costBase
+            // 
+            this.costBase.AutoSize = true;
+            this.costBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costBase.Location = new System.Drawing.Point(123, 34);
+            this.costBase.Name = "costBase";
+            this.costBase.Size = new System.Drawing.Size(18, 20);
+            this.costBase.TabIndex = 20;
+            this.costBase.Text = "?";
             // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 608);
+            this.ClientSize = new System.Drawing.Size(655, 608);
             this.Controls.Add(this.groupQuoteSummary);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnCancel);
@@ -521,7 +497,6 @@
             this.groupBoxShipping.ResumeLayout(false);
             this.groupBoxShipping.PerformLayout();
             this.groupSurfaceMaterial.ResumeLayout(false);
-            this.groupSurfaceMaterial.PerformLayout();
             this.groupBoxDrawer.ResumeLayout(false);
             this.groupBoxDrawer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericDrawers)).EndInit();
@@ -548,11 +523,6 @@
         private System.Windows.Forms.RadioButton radioBtnShipping7days;
         private System.Windows.Forms.RadioButton radioBtnShippingStandard;
         private System.Windows.Forms.GroupBox groupSurfaceMaterial;
-        private System.Windows.Forms.RadioButton radioBtnMaterialVeneer;
-        private System.Windows.Forms.RadioButton radioBtnMaterialRosewood;
-        private System.Windows.Forms.RadioButton radioBtnMaterialPine;
-        private System.Windows.Forms.RadioButton radioBtnMaterialLaminate;
-        private System.Windows.Forms.RadioButton radioBtnMaterialOak;
         private System.Windows.Forms.TextBox customerName;
         protected System.Windows.Forms.GroupBox groupBoxDrawer;
         private System.Windows.Forms.NumericUpDown numericDrawers;
@@ -572,5 +542,8 @@
         private System.Windows.Forms.GroupBox groupQuoteSummary;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox desktopMaterialComboBox;
+        private System.Windows.Forms.Label labelBase;
+        private System.Windows.Forms.Label costBase;
     }
 }
