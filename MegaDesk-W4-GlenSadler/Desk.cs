@@ -27,10 +27,10 @@ namespace MegaDesk_3_GlenSadler
 
     public enum DeskTopMaterial
     {
-        Oak = 200,
-        Laminate = 100,
-        Pine = 50,
-        Rosewood =  300,
-        Veneer = 125
+        Oak,
+        Laminate,
+        Pine,
+        Rosewood,
+        Veneer
     }
 }

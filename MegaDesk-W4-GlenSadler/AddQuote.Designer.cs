@@ -261,7 +261,7 @@
             this.desktopMaterialComboBox.Name = "desktopMaterialComboBox";
             this.desktopMaterialComboBox.Size = new System.Drawing.Size(237, 28);
             this.desktopMaterialComboBox.TabIndex = 5;
-            this.desktopMaterialComboBox.TextChanged += new System.EventHandler(this.comboSurfaceMaterial_TextChanged);
+            this.desktopMaterialComboBox.SelectedValueChanged += new System.EventHandler(this.desktopMaterialComboBox_SelectedValueChanged);
             // 
             // customerName
             // 
@@ -312,6 +312,7 @@
             // 
             this.costSurfaceArea.AutoSize = true;
             this.costSurfaceArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costSurfaceArea.ForeColor = System.Drawing.Color.MediumBlue;
             this.costSurfaceArea.Location = new System.Drawing.Point(123, 69);
             this.costSurfaceArea.Name = "costSurfaceArea";
             this.costSurfaceArea.Size = new System.Drawing.Size(18, 20);
@@ -332,6 +333,7 @@
             // 
             this.costMaterial.AutoSize = true;
             this.costMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costMaterial.ForeColor = System.Drawing.Color.MediumBlue;
             this.costMaterial.Location = new System.Drawing.Point(123, 109);
             this.costMaterial.Name = "costMaterial";
             this.costMaterial.Size = new System.Drawing.Size(18, 20);
@@ -352,6 +354,7 @@
             // 
             this.costDrawers.AutoSize = true;
             this.costDrawers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costDrawers.ForeColor = System.Drawing.Color.MediumBlue;
             this.costDrawers.Location = new System.Drawing.Point(123, 149);
             this.costDrawers.Name = "costDrawers";
             this.costDrawers.Size = new System.Drawing.Size(18, 20);
@@ -372,6 +375,7 @@
             // 
             this.costTotal.AutoSize = true;
             this.costTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costTotal.ForeColor = System.Drawing.Color.MediumBlue;
             this.costTotal.Location = new System.Drawing.Point(123, 230);
             this.costTotal.Name = "costTotal";
             this.costTotal.Size = new System.Drawing.Size(18, 20);
@@ -392,6 +396,7 @@
             // 
             this.costShipping.AutoSize = true;
             this.costShipping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costShipping.ForeColor = System.Drawing.Color.MediumBlue;
             this.costShipping.Location = new System.Drawing.Point(123, 189);
             this.costShipping.Name = "costShipping";
             this.costShipping.Size = new System.Drawing.Size(18, 20);
@@ -465,6 +470,7 @@
             // 
             this.costBase.AutoSize = true;
             this.costBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costBase.ForeColor = System.Drawing.Color.MediumBlue;
             this.costBase.Location = new System.Drawing.Point(123, 34);
             this.costBase.Name = "costBase";
             this.costBase.Size = new System.Drawing.Size(18, 20);

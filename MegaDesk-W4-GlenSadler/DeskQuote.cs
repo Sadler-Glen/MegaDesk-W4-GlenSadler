@@ -76,7 +76,7 @@ namespace MegaDesk_3_GlenSadler
         // calculate desktop material cost
         public int DeskTopMaterialCost()
         {
-            switch (Desk.DeskTopMaterial)           {
+            switch (Desk.DeskTopMaterial) {
                 case DeskTopMaterial.Oak:
                     MaterialCost = 200;
                     break;
@@ -93,7 +93,7 @@ namespace MegaDesk_3_GlenSadler
                     MaterialCost = 125;
                     break;
                 default:
-                    MaterialCost = 50;
+                    MaterialCost = 0;
                     break;
             }
             return MaterialCost;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using System.IO;
 
 namespace MegaDesk_3_GlenSadler
 {
@@ -23,10 +24,28 @@ namespace MegaDesk_3_GlenSadler
             List<DeskTopMaterial> MaterialList = Enum.GetValues(typeof(DeskTopMaterial)).Cast<DeskTopMaterial>().ToList();
             desktopMaterialComboBox.DataSource = MaterialList;
 
-            // desktopMaterialComboBox.DataSource = Enum.GetNames(typeof(DeskTopMaterial));
+            //desktopMaterialComboBox.DataSource = Enum.GetNames(typeof(DeskTopMaterial));
             //comboDrawers.DataSource = new int[] { 0, 1, 2, 3, 4, 5, 6, 7 };
             //comboShipping.DataSource = new int[] { 0, 7, 5, 3 };
         }
+
+        /*private void fileQuote(DeskQuote deskQuote)
+        {
+            string csvFile = "quotes.txt";
+
+            using (StreamWriter sr = new StreamWriter(csvFile, true))
+            {
+                sr.WriteLine(
+                        $"{quote.QuoteDate}," +
+                        $"{quote.CustomerName}," +
+                        $"{quote.SurfaceAreaCost}," +
+                        $"{quote.Width}," +
+                        $"{quote.desk.NumDrawers}," +
+                        $"{quote.desk.Material}," +
+                        $"{quote.ShippingDays}," +
+                        $"{quote.CalculateTotalCost()}");
+            }
+        }*/
 
 
         private void AddQuote_Load(object sender, EventArgs e)
@@ -303,7 +322,7 @@ namespace MegaDesk_3_GlenSadler
             }
         }
 
-        private void comboSurfaceMaterial_TextChanged(object sender, EventArgs e)
+        /*private void comboSurfaceMaterial_TextChanged(object sender, EventArgs e)
         {
             var desk = new Desk
             {
@@ -316,39 +335,42 @@ namespace MegaDesk_3_GlenSadler
 
             switch (desktopMaterialComboBox.Text)
             {
-                case "Laminate":
-                    desk.DeskTopMaterial = DeskTopMaterial.Laminate;
-                    //MessageBox.Show($"I'm {desk.DeskTopMaterial}");
-                    //MessageBox.Show(DeskTopMaterial.Laminate.ToString());
-                    break;
-
                 case "Oak":
                     desk.DeskTopMaterial = DeskTopMaterial.Oak;
-                    //MessageBox.Show($"I'm {desk.DeskTopMaterial}");
+                    MessageBox.Show($"I'm {desk.DeskTopMaterial}");
                     //MessageBox.Show(desktopMaterialComboBox.SelectedValue.ToString());
+                    costMaterial.Text = ($"${quote.DeskTopMaterialCost().ToString()}");
+                    break;
+
+                case "Laminate":
+                    desk.DeskTopMaterial = DeskTopMaterial.Laminate;
+                    MessageBox.Show($"I'm {desk.DeskTopMaterial}");
+                    //MessageBox.Show(DeskTopMaterial.Laminate.ToString());
+                    costMaterial.Text = ($"${quote.DeskTopMaterialCost().ToString()}");
                     break;
 
                 case "Pine":
                     desk.DeskTopMaterial = DeskTopMaterial.Pine;
-                    //MessageBox.Show($"I'm {desk.DeskTopMaterial}");
+                    MessageBox.Show($"I'm {desk.DeskTopMaterial}");
                     //MessageBox.Show(desktopMaterialComboBox.SelectedValue.ToString());
+                    costMaterial.Text = ($"${quote.DeskTopMaterialCost().ToString()}");
                     break;
 
                 case "Rosewood":
                     desk.DeskTopMaterial = DeskTopMaterial.Rosewood;
                     //MessageBox.Show($"I'm {desk.DeskTopMaterial}");
                     //MessageBox.Show(desktopMaterialComboBox.SelectedValue.ToString());
+                    costMaterial.Text = ($"${quote.DeskTopMaterialCost().ToString()}");
                     break;
 
                 case "Veneer":
                     desk.DeskTopMaterial = DeskTopMaterial.Veneer;
                     //MessageBox.Show($"I'm {desk.DeskTopMaterial}");
                     //MessageBox.Show(desktopMaterialComboBox.SelectedValue.ToString());
+                    costMaterial.Text = ($"${quote.DeskTopMaterialCost().ToString()}");
                     break;
             }
-            //rushDayCosts();
-            quoteTotalCost();
-        }
+        }*/
 
 
 
@@ -411,6 +433,56 @@ namespace MegaDesk_3_GlenSadler
         {
             quote.RushDays = 3;
             quoteTotalCost();
+        }
+
+        private void desktopMaterialComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var desk = new Desk
+            {
+                Width = Int32.Parse(numericWidth.Text),
+                Depth = Int32.Parse(numericDepth.Text),
+                NumberOfDrawers = Int32.Parse(numericDrawers.Text)
+            };
+
+            //MessageBox.Show(desktopMaterialComboBox.SelectedValue.ToString());
+
+            switch (desktopMaterialComboBox.Text)
+            {
+                case "Oak":
+                    desk.DeskTopMaterial = DeskTopMaterial.Oak;
+                    MessageBox.Show($"I'm {desk.DeskTopMaterial}");
+                    //MessageBox.Show(desktopMaterialComboBox.SelectedValue.ToString());
+                    costMaterial.Text = ($"${quote.DeskTopMaterialCost().ToString()}");
+                    break;
+
+                case "Laminate":
+                    desk.DeskTopMaterial = DeskTopMaterial.Laminate;
+                    MessageBox.Show($"I'm {desk.DeskTopMaterial}");
+                    //MessageBox.Show(DeskTopMaterial.Laminate.ToString());
+                    costMaterial.Text = ($"${quote.DeskTopMaterialCost().ToString()}");
+                    break;
+
+                case "Pine":
+                    desk.DeskTopMaterial = DeskTopMaterial.Pine;
+                    MessageBox.Show($"I'm {desk.DeskTopMaterial}");
+                    //MessageBox.Show(desktopMaterialComboBox.SelectedValue.ToString());
+                    costMaterial.Text = ($"${quote.DeskTopMaterialCost().ToString()}");
+                    break;
+
+                case "Rosewood":
+                    desk.DeskTopMaterial = DeskTopMaterial.Rosewood;
+                    //MessageBox.Show($"I'm {desk.DeskTopMaterial}");
+                    //MessageBox.Show(desktopMaterialComboBox.SelectedValue.ToString());
+                    costMaterial.Text = ($"${quote.DeskTopMaterialCost().ToString()}");
+                    break;
+
+                case "Veneer":
+                    desk.DeskTopMaterial = DeskTopMaterial.Veneer;
+                    //MessageBox.Show($"I'm {desk.DeskTopMaterial}");
+                    //MessageBox.Show(desktopMaterialComboBox.SelectedValue.ToString());
+                    costMaterial.Text = ($"${quote.DeskTopMaterialCost().ToString()}");
+                    break;
+            }
         }
     }
 }
